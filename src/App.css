@@ -1,12 +1,61 @@
+.App {
+  text-align: center;
+  margin-inline: 50px;
+}
 .products-wrapper {
   display: flex;
-  gap: 10px;
-  flex-basis: 1 1;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 .products-wrapper .products {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  flex-basis: 40%;
   border: solid;
   border-radius: 10px;
+  padding: 47px;
+  text-align: left;
 }
 .products-wrapper .products img {
   width: 100%;
+}
+.products-wrapper .products .price {
+  color: #058208;
+}
+.products-wrapper .products .scents {
+  color: white;
+  text-transform: uppercase;
+  display: flex;
+  gap: 10px;
+}
+.products-wrapper .products .scents .citrus {
+  background-color: #de7c00;
+  border-radius: 19px;
+  padding: 10px;
+}
+.products-wrapper .products .scents .fresh {
+  background-color: #006fd6;
+  border-radius: 19px;
+  padding: 10px;
+}
+.products-wrapper .products .scents .herbal {
+  background-color: #5a3714;
+  border-radius: 19px;
+  padding: 10px;
+}
+.products-wrapper .products .scents .rich {
+  background-color: #e0a17e;
+  border-radius: 19px;
+  padding: 10px;
+}
+.products-wrapper .products .scents .spiced {
+  background-color: #c10000;
+  border-radius: 19px;
+  padding: 10px;
+}
+.products-wrapper .products .scents .woodsy {
+  background-color: #165834;
+  border-radius: 19px;
+  padding: 10px;
 }
