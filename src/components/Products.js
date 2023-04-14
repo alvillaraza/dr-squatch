@@ -27,19 +27,15 @@ const Products = ({ products }) => {
     for (const [key, value] of Object.entries(counts)) {
       const name = key.split('-');
 
-      const newname = name
+      const nameCapitalized = name
         .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
         .join(' ');
 
-      // const temp = name.split(' ');
-      console.log(newname);
-
-      // const nameCapitalized = name.charAt(0).toUpperCase() + name.slice(1);
-      // sentenceStructure += `${nameCapitalized}${
-      //   value > 1 ? ` x ${value}` : ''
-      // }`;
-      // sentenceStructure +=
-      //   Object.keys(counts)[Object.keys(counts).length - 1] === key ? '' : ', ';
+      sentenceStructure += `${nameCapitalized}${
+        value > 1 ? ` x ${value}` : ''
+      }`;
+      sentenceStructure +=
+        Object.keys(counts)[Object.keys(counts).length - 1] === key ? '' : ', ';
     }
 
     return sentenceStructure;
