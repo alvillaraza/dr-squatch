@@ -46,11 +46,17 @@ const Products = ({ products }) => {
               <h2>{p.title}</h2>
               <div className='price-wrapper'>
                 {p.originalPrice && (
-                  <h2 className='price-original'>${priceFormatter(p.originalPrice)}</h2>
+                  <h2 className='price-original'>
+                    ${priceFormatter(p.originalPrice)}
+                  </h2>
                 )}
                 <h2 className='price'>${priceFormatter(p.price)}</h2>
               </div>
-              <p>{p.scents}</p>
+              <div className='scents'>
+                {p.scents.map((scent) => {
+                  return <h2 className={`${scent}`}>{scent}</h2>;
+                })}
+              </div>
               <p>Included</p>
               <p className='included'> {includeDups(p.products_included)}</p>
             </div>
