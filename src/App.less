@@ -11,16 +11,17 @@
   margin-inline: 50px;
 }
 
+h2, p {
+  margin: 0;
+  line-height: 1.5;
+}
+
 .products-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 
   .products {
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 100%;
-    flex-basis: 40%;
     border: solid;
     border-radius: 10px;
     padding: 47px;
@@ -30,16 +31,27 @@
       width: 100%;
     }
 
-    .price {
-      color: #058208;
+    .price-wrapper {
+      display: flex;
+      gap: 10px;
+
+      .price-original {
+        color: gray;
+        text-decoration: line-through;
+      }
+
+      .price {
+        color: #058208;
+      }
     }
 
     .scents {
       color: white;
       text-transform: uppercase;
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
-      
+
       .citrus {
         background-color: @citrus;
         border-radius: 19px;
@@ -70,6 +82,12 @@
         border-radius: 19px;
         padding: 10px;
       }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .products {
+      flex: 1 1 calc(33.33% - 20px);
     }
   }
 }

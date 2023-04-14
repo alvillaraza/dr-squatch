@@ -2,16 +2,17 @@
   text-align: center;
   margin-inline: 50px;
 }
+h2,
+p {
+  margin: 0;
+  line-height: 1.5;
+}
 .products-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
 }
 .products-wrapper .products {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 100%;
-  flex-basis: 40%;
   border: solid;
   border-radius: 10px;
   padding: 47px;
@@ -20,13 +21,22 @@
 .products-wrapper .products img {
   width: 100%;
 }
-.products-wrapper .products .price {
+.products-wrapper .products .price-wrapper {
+  display: flex;
+  gap: 10px;
+}
+.products-wrapper .products .price-wrapper .price-original {
+  color: gray;
+  text-decoration: line-through;
+}
+.products-wrapper .products .price-wrapper .price {
   color: #058208;
 }
 .products-wrapper .products .scents {
   color: white;
   text-transform: uppercase;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
 .products-wrapper .products .scents .citrus {
@@ -58,4 +68,9 @@
   background-color: #165834;
   border-radius: 19px;
   padding: 10px;
+}
+@media screen and (min-width: 768px) {
+  .products-wrapper .products {
+    flex: 1 1 calc(33.33% - 20px);
+  }
 }
