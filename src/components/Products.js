@@ -81,40 +81,43 @@ const Products = ({ products }) => {
 
   return (
     <section className='products-page'>
-      <div>Products</div>
-      {scentList.map((s) => {
-        return (
-          <span>
-            <input
-              type='checkbox'
-              value={`${s}`}
-              onClick={() => toggleScent(s)}
-            />
-            <label for={`${s}`}>{`${s}`}</label>
-          </span>
-        );
-      })}
+      <div className='checkboxes'>
+        {scentList.map((s) => {
+          return (
+            <span>
+              <input
+                type='checkbox'
+                value={`${s}`}
+                onClick={() => toggleScent(s)}
+              />
+              <label for={`${s}`}>{`${s}`}</label>
+            </span>
+          );
+        })}
+      </div>
       <div className='products-wrapper'>
         {filteredProducts?.map((p) => {
           return (
             <div className='products'>
               <img src={p.imageSrc} alt={p.title} />
-              <h2>{p.title}</h2>
+              <h3>{p.title}</h3>
               <div className='price-wrapper'>
                 {p.originalPrice && (
-                  <h2 className='price-original'>
+                  <h3 className='price-original'>
                     ${priceFormatter(p.originalPrice)}
-                  </h2>
+                  </h3>
                 )}
-                <h2 className='price'>${priceFormatter(p.price)}</h2>
+                <h3 className='price'>${priceFormatter(p.price)}</h3>
               </div>
               <div className='scents'>
                 {p.scents.map((scent) => {
-                  return <h2 className={`${scent}`}>{scent}</h2>;
+                  return <p className={`${scent}`}>{scent}</p>;
                 })}
               </div>
-              <p>Included</p>
-              <p className='included'> {includeDups(p.products_included)}</p>
+              <div className='included-wrapper'>
+                <h4>Included</h4>
+                <p className='included'> {includeDups(p.products_included)}</p>
+              </div>
             </div>
           );
         })}

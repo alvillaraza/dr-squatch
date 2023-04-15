@@ -33,12 +33,12 @@ function App() {
         originalPrice: null,
       };
     }
-    return {...p};
+    return { ...p };
   });
 
   return (
     <div className='App'>
-      Dr Squatch
+      <h1>Dr Squatch</h1>
       <Products products={prod} />
     </div>
   );
