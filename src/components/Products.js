@@ -84,13 +84,13 @@ const Products = ({ products }) => {
       <div className='checkboxes'>
         {scentList.map((s) => {
           return (
-            <span>
+            <span key={s}>
               <input
                 type='checkbox'
                 value={`${s}`}
                 onClick={() => toggleScent(s)}
               />
-              <label for={`${s}`}>{`${s}`}</label>
+              <label>{`${s}`}</label>
             </span>
           );
         })}
@@ -98,7 +98,7 @@ const Products = ({ products }) => {
       <div className='products-wrapper'>
         {filteredProducts?.map((p) => {
           return (
-            <div className='products'>
+            <div className='products' key={p.title}>
               <img src={p.imageSrc} alt={p.title} />
               <h3>{p.title}</h3>
               <div className='price-wrapper'>
@@ -111,7 +111,7 @@ const Products = ({ products }) => {
               </div>
               <div className='scents'>
                 {p.scents.map((scent) => {
-                  return <p className={`${scent}`}>{scent}</p>;
+                  return <p className={`${scent}`} key={scent}>{scent}</p>;
                 })}
               </div>
               <div className='included-wrapper'>
