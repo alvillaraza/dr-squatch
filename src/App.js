@@ -36,7 +36,6 @@ function App() {
     return {...p};
   });
 
-console.log(prod)
   return (
     <div className='App'>
       Dr Squatch

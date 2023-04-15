@@ -71,6 +71,6 @@ p {
 }
 @media screen and (min-width: 768px) {
   .products-wrapper .products {
-    flex: 1 1 calc(33.33% - 20px);
+    flex-basis: 10%;
   }
 }
