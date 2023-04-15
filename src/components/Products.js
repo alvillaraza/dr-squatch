@@ -111,7 +111,11 @@ const Products = ({ products }) => {
               </div>
               <div className='scents'>
                 {p.scents.map((scent) => {
-                  return <p className={`${scent}`} key={scent}>{scent}</p>;
+                  return (
+                    <p className={`${scent}`} key={scent}>
+                      {scent}
+                    </p>
+                  );
                 })}
               </div>
               <div className='included-wrapper'>
